@@ -1,0 +1,34 @@
+.menu {
+    width: 140px;
+    padding: 20px;
+    background-color: #494949;
+    margin: 0;
+    height: 100%;
+
+}
+
+.menuList span {
+   margin-right: 10px;
+}
+
+.menuList img {
+    width: 120px;
+}
+
+.menuList h3 {
+    text-align: center;
+    font-size: 35px;
+    margin: 0 0 50px;
+    color: #ff9478;
+}
+
+.menuList p {
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    border-radius: 10px;
+
+}
+
+.menuList p:hover {
+   background-color: #5a5a5a;
+}

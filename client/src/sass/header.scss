@@ -1,0 +1,38 @@
+
+.header {
+    display: flex;
+    justify-content:space-between;
+}
+
+.headerIcons {
+text-align: right;
+size:70px;
+color: #ffeb99;
+padding-top: 12px;
+margin-right: 50px;
+}
+
+.headerIcons p {
+    display: inline;
+margin: 0 10px;
+}
+
+.headerTitles {
+padding: 0;
+width: max-content;
+}
+
+.headerTitles h1 {
+    font-size: 16px;
+    color: #ffeb99;
+    font-weight: 600;
+    margin-top: 10px;
+   
+}
+
+.headerTitles h3 {
+    font-size: 35px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
