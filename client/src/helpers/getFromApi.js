@@ -1,27 +1,27 @@
 
-var listAux = [], nextPage = null
-export const fetchAllData = async (total) => {
-    /*
+
+export const fetchAllPlanetData = async (total) => {
+    var listAux = []
   var alreadyIn
   console.log("Entra")
   for (let i = 1; i<total ; i++) {
     console.log("Entra " + i)
-        await fetch(`https://www.swapi.tech/api/planets/${1}`)
+        await fetch(`https://www.swapi.tech/api/planets/${i}`)
         .then((response) => response.json())
         .then((data => {
-            alreadyIn = listAux.find(uid => uid.result.uid === data.result.uid)
+            console.log(data.result.uid)
+           // alreadyIn = listAux.find(element => element.uid === data.result.uid)
             console.log(alreadyIn)
-            if (alreadyIn === undefined) {
+            if (data.message==="ok") {
                 listAux.push(data.result)
                 console.log(listAux)
             }
-          
         }))
         alreadyIn = null;
-      
+        //if (listAux.length>5){return listAux}
     }  
-        return listAux
-*/
+   
+    return listAux
           //return res.results
   }
 
