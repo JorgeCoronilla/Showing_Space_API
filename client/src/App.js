@@ -1,8 +1,12 @@
 import { Header } from "./components/header";
 import { Menu } from "./components/menu";
-import { Search } from "./components/search";
 import { CreateMainContext } from "./providers/createMainProvider";
-import {useState} from 'react'
+import {useState} from 'react';
+import {Planets} from "./components/planets/planets";
+import {StarShips} from "./components/starShips/starShips";
+import { Vehicles } from "./components/vehicles/vehicles";
+import People from "./components/people/people";
+
 
 function App() {
 
@@ -15,10 +19,14 @@ function App() {
         <div>
           <Menu setDisplay={setDisplay} />
         </div>
-        <div class="secondBody">
+        <div className="secondBody">
           <Header />
-          <Search />
-          
+                 
+
+          {display === "planets" && <Planets setDisplay={setDisplay} />}
+          {display === "starShips" && <StarShips />}
+          {display === "vehicles" && <Vehicles setDisplay={setDisplay} />}
+          {display === "people" && <People setDisplay={setDisplay} />}
         </div>
 
       </div>

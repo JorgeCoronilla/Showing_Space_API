@@ -2,6 +2,7 @@ import React from 'react';
 import { IoRocketOutline, IoPlanetOutline } from "react-icons/io5";
 import { RiTeamLine, RiTruckLine } from "react-icons/ri";
 import imperialIcon from '../media/comet.png'
+
 export const Menu = ({setDisplay}) => {
 
   const iconStyle = { fontSize: "20px", position: "relative", top: "3px" }
