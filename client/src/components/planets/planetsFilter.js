@@ -1,15 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import { sortBy } from '../../helpers/sortItems';
+import {planetOptions}  from '../../helpers/filterOptions';
+export const PlanetsFilter = ({ setSorCriteria, sortCriteria, planets2 }) => {
 
-export const PlanetsFilter = ({ setSorCriteria }) => {
-
-  const options = [
-    {value: 'name', text: 'Planet name'},
-    {value: 'uid', text: 'Uid'}
-  ];
+  const options = planetOptions;
   const handleChange = e => {
     console.log(e.target.value)
-    setSorCriteria(e.target.value)
+    //setSorCriteria(e.target.value)
+    setSorCriteria((sortCriteria) => (sortCriteria=e.target.value));
   }
+
   return (
     <div>
       <div>
@@ -25,15 +25,3 @@ export const PlanetsFilter = ({ setSorCriteria }) => {
     </div>
   )
 }
-
-/*
-   <option value="name">Planet name</option>
-          <option value="population">Population</option>
-          <option value="climate">Climate</option>
-          <option value="diameter">Diameter</option>
-          <option value="terrain">Terrain</option>
-          <option value="rotation_period">Rotation_period</option>
-          <option value="orbital_period">Orbital_period</option>
-          <option value="gravity">Gravity</option>
-          <option value="surface_water">Surface_water</option>
-          */

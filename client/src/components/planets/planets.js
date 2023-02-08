@@ -6,16 +6,20 @@ import { sortBy } from '../../helpers/sortItems';
 import { fetchAllPlanetData } from '../../helpers/getFromApi';
 import loadingGif from '../../media/loading.gif'
 import { CreateMainContext } from '../../providers/createMainProvider';
+import {planetOptions}  from '../../helpers/filterOptions';
+import { PlanetCard } from './planetCard';
+
+
 export const Planets = () => {
   // const { totalPlanets, currentPage,recordsPerPage } = useContext(CreateMainContext);
-  const [sortCriteria, setSorCriteria] = useState('uid');
+  const [sortCriteria, setSorCriteria] = useState('name');
   const [planets2, setPlanets2] = useState([]);
   const [loading, setLoading] = useState(true);
   const [urlPlanets, setUrlPlanets] = useState('https://www.swapi.tech/api/planets');
   const [totalPlanets, setTotalPlanets] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
-  const [planets3, setPlanets3] = useState([])
+  const options = planetOptions;
 
   const previous = () => {
     console.log("previous")
@@ -28,6 +32,10 @@ export const Planets = () => {
   }
 
   useEffect(() => {
+    planets2.sort(sortBy(sortCriteria))
+  }, [sortCriteria])
+
+  useEffect(() => {
     fetchData()
     if (loading) {
       fetchAllPlanetData(15).then((response) => {
@@ -37,9 +45,12 @@ export const Planets = () => {
       })
     }
     return () => {
-      console.log(planets2)
+      planets2.sort(sortBy(sortCriteria))
     }
   }, [totalPlanets, planets2, loading])
+
+
+
 
   const fetchData = () => {
     return fetch(urlPlanets)
@@ -51,30 +62,24 @@ export const Planets = () => {
       });
   }
 
+
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = planets2.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(planets2.length / recordsPerPage)
+
   return (
     <div>
       <h3>planets</h3>
-
+      <p>{sortCriteria}</p>
       <div>
-        holas
-        {planets2.length >1 ?
-          <div>
-            {currentRecords.map((planet, index) => {
-              return (
-                <p key={planet.properties._id}>{planet.properties.name}</p>
-              )
-            })}
-          </div>
-          :
-          <div>
-            <img src={loadingGif} alt="Loading Data" />
-            <p>Loading data...</p>
-          </div>
-        }
+        <div className='searchContainer'>
+          <div><Search /></div>
+          
+          <div><PlanetsFilter planets2={planets2} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} /> </div>
+ 
+               </div>
+     <PlanetCard planets2={planets2} currentRecords={currentRecords}/>
       </div>
       {planets2.length > 1 &&
         <div className='pageBrowser'>
@@ -85,3 +90,7 @@ export const Planets = () => {
     </div>
   )
 }
+
+
+/*
+  */

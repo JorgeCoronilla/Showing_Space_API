@@ -13,11 +13,7 @@ import { sortBy } from './helpers/sortItems';
 
 function App() {
 
-  const [display, setDisplay] = useState("planets");
-
-
-  
- 
+  const [display, setDisplay] = useState("planets"); 
   return (
     <CreateMainContext.Provider value ={{}}>
       <div className="mainContainer">
@@ -26,8 +22,6 @@ function App() {
         </div>
         <div className="secondBody">
           <Header />
-                 
-
           {display === "planets" && <Planets />}
           {display === "starShips" && <StarShips />}
           {display === "vehicles" && <Vehicles />}

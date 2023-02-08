@@ -3,7 +3,6 @@
 export const fetchAllPlanetData = async (total) => {
     var listAux = []
   var alreadyIn
-  console.log("Entra")
   for (let i = 1; i<total ; i++) {
     console.log("Entra " + i)
         await fetch(`https://www.swapi.tech/api/planets/${i}`)
@@ -13,7 +12,7 @@ export const fetchAllPlanetData = async (total) => {
            // alreadyIn = listAux.find(element => element.uid === data.result.uid)
             console.log(alreadyIn)
             if (data.message==="ok") {
-                listAux.push(data.result)
+                listAux.push(data.result.properties)
                 console.log(listAux)
             }
         }))
