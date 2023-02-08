@@ -5,14 +5,16 @@ import planetsImgs from '../../media'
 
 
 export const PlanetCard = ({planets2, currentRecords}) => {
+
 const addDefaultImg = (e) => {
     e.target.src='./fallbackImg.png'
 }
+
     //const {planets2} = useContext(CreateMainContext)
   return (
-    <div className='cardContainer'>
+    <div >
         {planets2.length > 1 ?
-          <div>
+          <div className='cardContainer'>
             {currentRecords.map((planet, index) => {
                 let population
                 let imgName=planet.name.toLowerCase().replace(/\s/g, "");
@@ -42,6 +44,7 @@ const addDefaultImg = (e) => {
     </div>
   )
 }
+
 /*<img src={require(`../../media/planets/${planet.name.toLowerCase()}.jpg`)} />
 
 import {

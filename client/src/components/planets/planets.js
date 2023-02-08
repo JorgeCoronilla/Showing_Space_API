@@ -4,9 +4,7 @@ import { PlanetsFilter } from '../planets/planetsFilter';
 import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 import { sortBy } from '../../helpers/sortItems';
 import { fetchAllPlanetData } from '../../helpers/getFromApi';
-import loadingGif from '../../media/loading.gif'
 import { CreateMainContext } from '../../providers/createMainProvider';
-import {planetOptions}  from '../../helpers/filterOptions';
 import { PlanetCard } from './planetCard';
 
 
@@ -19,27 +17,22 @@ export const Planets = () => {
   const [totalPlanets, setTotalPlanets] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage] = useState(10);
-  const options = planetOptions;
+  const [refresh, setRefresh] = useState(true)
 
-  const previous = () => {
-    console.log("previous")
-    if (currentPage !== 1) setCurrentPage(currentPage - 1)
-  }
 
-  const next = () => {
-    console.log("next")
-    if (currentPage !== nPages) setCurrentPage(currentPage + 1)
-  }
+  useEffect(() => {
+    setLoading(false)
+  }, [refresh])
 
   useEffect(() => {
     planets2.sort(sortBy(sortCriteria))
+    setRefresh(!refresh)
   }, [sortCriteria])
 
   useEffect(() => {
     fetchData()
     if (loading) {
       fetchAllPlanetData(15).then((response) => {
-        console.log("terminó")
         setPlanets2(response);
         setLoading(false)
       })
@@ -49,19 +42,22 @@ export const Planets = () => {
     }
   }, [totalPlanets, planets2, loading])
 
-
-
-
   const fetchData = () => {
     return fetch(urlPlanets)
       .then((response) => response.json())
       .then((data) => {
         console.log(data)
         setTotalPlanets(data.total_records);
-        // console.log(data.results.sort(sortBy(sortCriteria)))
       });
   }
 
+  const previous = () => {
+    if (currentPage !== 1) setCurrentPage(currentPage - 1)
+  }
+
+  const next = () => {
+    if (currentPage !== nPages) setCurrentPage(currentPage + 1)
+  }
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
@@ -74,23 +70,28 @@ export const Planets = () => {
       <p>{sortCriteria}</p>
       <div>
         <div className='searchContainer'>
-          <div><Search /></div>
           
-          <div><PlanetsFilter planets2={planets2} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} /> </div>
- 
-               </div>
-     <PlanetCard planets2={planets2} currentRecords={currentRecords}/>
+          <div>
+            <Search />
+          </div>
+
+          <div>
+            <PlanetsFilter planets2={planets2} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} /> 
+          </div>
+
+        </div>
+
+          <PlanetCard planets2={planets2} currentRecords={currentRecords} />
+      
       </div>
+
       {planets2.length > 1 &&
         <div className='pageBrowser'>
           <button onClick={previous}><HiArrowCircleLeft /></button>
           <p>{currentPage} to {recordsPerPage} of {totalPlanets}</p>
           <button onClick={next}><HiArrowCircleRight /></button>
         </div>}
+
     </div>
   )
 }
-
-
-/*
-  */

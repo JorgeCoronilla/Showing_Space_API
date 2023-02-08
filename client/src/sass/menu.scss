@@ -1,7 +1,9 @@
+
+
 .menu {
-    width: 140px;
+    width: 100%;
     padding: 20px;
-    background-color: #494949;
+    background-color: #e8e8e8;
     margin: 0;
     height: 100%;
 
@@ -31,4 +33,52 @@
 
 .menuList p:hover {
    background-color: #5a5a5a;
+}
+
+.menumobile {
+    visibility: visible;}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+    
+.menu {
+    width: 100%;
+    padding: 20px;
+    background-color: #e8e8e8;
+    margin: 0;
+    height: 80px;
+    position: fixed;
+
+}
+
+.menuList span {
+   margin-right: 10px;
+}
+
+.menuList img {
+    position: absolute;  
+    width: 40px;
+    margin-left: 80%;
+    display: inline;
+}
+
+.menumobile {
+    visibility: visible;
+    position: absolute;
+    top:85px;
+    left: 30%;
+}
+
+.menudesktop {
+    visibility: hidden;
+}
+
+.menuList h3 {
+    text-align: center;
+    font-size: 35px;
+    margin: 0 auto;
+    text-align: center;
+    color: #ff9478;
+}
+
 }

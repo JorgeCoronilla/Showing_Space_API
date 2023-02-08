@@ -12,6 +12,7 @@ export const planetOptions = [
 
 
 export const starShipsOptions = [
-    { value: 'name', text: 'Planet name' },
-    { value: 'uid', text: 'Uid' }
+    { value: 'name', text: 'Chose filter' },
+    { value: 'cargo_capacity', text: 'Cargo capacity' },
+    { value: 'crew', text: 'Crew' }
 ];

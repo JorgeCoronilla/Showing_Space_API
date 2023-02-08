@@ -1,12 +1,9 @@
-import React, {useEffect} from 'react'
-import { sortBy } from '../../helpers/sortItems';
+import React from 'react'
 import {planetOptions}  from '../../helpers/filterOptions';
-export const PlanetsFilter = ({ setSorCriteria, sortCriteria, planets2 }) => {
+export const PlanetsFilter = ({ setSorCriteria }) => {
 
   const options = planetOptions;
   const handleChange = e => {
-    console.log(e.target.value)
-    //setSorCriteria(e.target.value)
     setSorCriteria((sortCriteria) => (sortCriteria=e.target.value));
   }
 
