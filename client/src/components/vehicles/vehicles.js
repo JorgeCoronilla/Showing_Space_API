@@ -3,7 +3,7 @@ import { Search } from '../search'
 
 export const Vehicles = () => {
   return (
-    <div><h3>Vehicles</h3>
+    <div className='cardsConatinerTitle'><h3>Vehicles</h3>
     <div>
         <Search />
         

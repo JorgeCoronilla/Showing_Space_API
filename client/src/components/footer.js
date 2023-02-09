@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Footer = () => {
   return (
-    <div className='footer'>footer</div>
+    <div className='footer'>2023 Jorge Coronilla &#169;</div>
   )
 }

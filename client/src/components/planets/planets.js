@@ -31,12 +31,12 @@ export const Planets = () => {
 
   useEffect(() => {
     fetchData()
-    if (loading) {
-      fetchAllPlanetData(15).then((response) => {
+   
+      fetchAllPlanetData(totalPlanets).then((response) => {
         setPlanets2(response);
         setLoading(false)
       })
-    }
+    
     return () => {
       planets2.sort(sortBy(sortCriteria))
     }
@@ -65,14 +65,13 @@ export const Planets = () => {
   const nPages = Math.ceil(planets2.length / recordsPerPage)
 
   return (
-    <div>
-      <h3>planets</h3>
-      <p>{sortCriteria}</p>
+    <div className='cardsConatinerTitle'>
+      <h3>Planets</h3>
       <div>
         <div className='searchContainer'>
           
           <div>
-            <Search />
+            <Search  planets2={planets2} />
           </div>
 
           <div>

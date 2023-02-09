@@ -2,12 +2,13 @@
 .header {
     display: flex;
     justify-content:space-between;
+    padding: 20px 30px;
 }
 
 .headerIcons {
 text-align: right;
 size:70px;
-color: #ffeb99;
+color:rgb(33, 33, 33);
 padding-top: 12px;
 margin-right: 50px;
 }
@@ -23,10 +24,13 @@ width: max-content;
 }
 
 .headerTitles h1 {
-    font-size: 16px;
-    color: #ffeb99;
+    font-size: 20px;
+ color:rgb(33, 33, 33);
     font-weight: 600;
     margin-top: 10px;
+    font-family: 'Alfa Slab One', cursive;
+
+
    
 }
 
@@ -41,5 +45,5 @@ width: max-content;
 .header {
     position: fixed;
     visibility: hidden;
-  
+    
 }}

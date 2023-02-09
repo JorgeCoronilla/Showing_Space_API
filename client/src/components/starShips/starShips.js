@@ -30,12 +30,12 @@ export const StarShips = () => {
   useEffect(() => {
     if (starShips.length<2){
       fetchData()
-      if (loading) {
-        fetchAllStarshipsData(15).then((response) => {
+     
+        fetchAllStarshipsData(totalStarShips).then((response) => {
           setStarShips(response);
           setLoading(false)
         })
-      }
+      
     }
    
     return () => {
@@ -67,7 +67,7 @@ export const StarShips = () => {
 
 
   return (
-    <div>
+    <div className='cardsConatinerTitle'>
       <h3>StarShips</h3>
       <p>{sortCriteria}</p>
       <div>

@@ -36,7 +36,7 @@ const addDefaultImg = (e) => {
             })}
           </div>
           :
-          <div>
+          <div className='loading'>
             <img src={loadingGif} alt="Loading Data" />
             <p>Loading data...</p>
           </div>
@@ -44,10 +44,3 @@ const addDefaultImg = (e) => {
     </div>
   )
 }
-
-/*<img src={require(`../../media/planets/${planet.name.toLowerCase()}.jpg`)} />
-
-import {
-    Alderaan, Bespin, Coruscant, Dagobah, Endor, 
-    Hoth, Kamino, Naboo,Tatooine, Yaviniv } from '../../media'
-*/

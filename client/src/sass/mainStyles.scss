@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@200;300;400;500;600;700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/*
+font-family: 'Alfa Slab One', cursive;
+font-family: 'Oswald', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 * { padding: 0; margin: 0; }
 
 * {
@@ -15,6 +26,8 @@ body {
   background-color: white;
   color: #363636;
   font-family: 'Ubuntu', sans-serif;
+  min-height: 100vh;
+
 }
 
 .mainContainer {
@@ -25,33 +38,46 @@ body {
 
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) and (min-width: 320px) {
+@media only screen and (max-width: 600px) {
 
   .menuGrid {
     grid-area: 2 / 1 / 3 / 13;
-    border: 1px solid red;
   
   }
   
   .headerGrid {
     grid-area: 1 / 1 / 2 / 13;
-    border: 1px solid red;
   
   }
   
   .contentGrid {
     grid-area: 3 / 1 / 4 / 13;
-    border: 1px solid red;
   
   }
   
   .footerGrid {
     grid-area: 4 / 1 / 5 / 13;
-    border: 1px solid red;
   
   }
   
- 
+ .cardsConatinerTitle{
+  margin: 100px 0 0 60px; 
+  
+ }
+
+.form-group, .fg--search{
+  z-index: 0;
+}
+
+ .searchContainer{
+margin: 0 30px 0;
+z-index: -1;
+visibility: hidden;
+}
+
+.cardContainer{
+  margin-left: 6%;
+}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -60,25 +86,21 @@ body {
 
   .menuGrid {
     grid-area: 1 / 1 / 4 / 3;
-    border: 1px solid red;
   
   }
   
   .headerGrid {
     grid-area: 1 / 3 / 2 / 13;
-    border: 1px solid red;
   
   }
   
   .contentGrid {
     grid-area: 2 / 3 / 4 / 13;
-    border: 1px solid red;
   
   }
   
   .footerGrid {
     grid-area: 4 / 1 / 5 / 13;
-    border: 1px solid red;
   
   }
   
@@ -90,25 +112,21 @@ body {
 
   .menuGrid {
     grid-area: 1 / 1 / 4 / 3;
-    border: 1px solid red;
   
   }
   
   .headerGrid {
     grid-area: 1 / 3 / 2 / 13;
-    border: 1px solid red;
   
   }
   
   .contentGrid {
     grid-area: 2 / 3 / 4 / 13;
-    border: 1px solid red;
   
   }
   
   .footerGrid {
     grid-area: 4 / 1 / 5 / 13;
-    border: 1px solid red;
   
   }
   
@@ -128,25 +146,21 @@ body {
 
   .menuGrid {
     grid-area: 1 / 1 / 4 / 3;
-    border: 1px solid red;
   
   }
   
   .headerGrid {
     grid-area: 1 / 3 / 2 / 13;
-    border: 1px solid red;
   
   }
   
   .contentGrid {
     grid-area: 2 / 3 / 4 / 13;
-    border: 1px solid red;
   
   }
   
   .footerGrid {
     grid-area: 4 / 1 / 5 / 13;
-    border: 1px solid red;
   
   }
    

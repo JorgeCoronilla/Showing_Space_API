@@ -8,7 +8,8 @@ export const StarShipCard = ({starShips, currentRecords}) => {
     }
   
     return (
-        <div >
+        <div>
+
         {starShips.length > 1 ?
           <div className='cardContainer'>
             {currentRecords.map((starShip, index) => {
@@ -32,7 +33,7 @@ export const StarShipCard = ({starShips, currentRecords}) => {
             })}
           </div>
           :
-          <div>
+          <div className='loading'>
             <img src={loadingGif} alt="Loading Data" />
             <p>Loading data...</p>
           </div>

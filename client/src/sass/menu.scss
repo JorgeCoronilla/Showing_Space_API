@@ -15,13 +15,21 @@
 
 .menuList img {
     width: 120px;
+    margin-left: 25%;
 }
 
 .menuList h3 {
     text-align: center;
     font-size: 35px;
     margin: 0 0 50px;
-    color: #ff9478;
+    color: #363636;
+    font-weight: 100;
+    font-family: 'Alfa Slab One', cursive;
+
+}
+
+.menudesktop{
+margin-left: 10%;
 }
 
 .menuList p {
@@ -32,7 +40,7 @@
 }
 
 .menuList p:hover {
-   background-color: #5a5a5a;
+   background-color: #b2b2b2;
 }
 
 .menumobile {
