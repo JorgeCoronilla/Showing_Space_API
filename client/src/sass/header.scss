@@ -36,3 +36,10 @@ width: max-content;
     padding: 0;
 }
 
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+    
+.header {
+    position: fixed;
+    visibility: hidden;
+  
+}}
