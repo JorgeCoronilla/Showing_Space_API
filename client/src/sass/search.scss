@@ -5,7 +5,7 @@
 }
 
 .cardsConatinerTitle h3{
-    margin: 0 30px 15px;
+    margin: 0 10px 25px 30px;
     font-family: 'Alfa Slab One', cursive;
     font-weight: 200;
     font-size: 30px;
@@ -15,20 +15,24 @@
 .searchBox {
   border-radius: 20px;
   padding: 1px 10px 1px 20px;
-
 }
 
 .fg--search {
     background: white;
     position: relative;
-    width: 200px;
+    width: 180px;
+    margin:  0 10px 0 -4px;
   }
   
   .fg--search input {
     width: 100%;
-    padding: 1px 60px 1px 20px;
+    padding: 2px 60px 3px 15px;
     display: block;
     border-radius: 20px;
+    border: solid #27536b 1.5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 9px;
+
   }
   
   .fg--search button {
@@ -36,29 +40,35 @@
     border: none;
     cursor: pointer;
     display: inline-block;
-    font-size: 20px;
+    font-size: 5px;
     position: absolute;
     top: 0;
     right: 0;
     padding: 18px 20px;
     z-index: 2;
+
   }
   
   .fg--search input:focus + button .fa-search {
     color: red;
   }
 
+  .filters {
+    margin-left: 8px;
+  }
   .filters select{
-    margin-left: 15px;
+    margin-left: 5px;
     background-color: transparent;
     border: none;
-    padding: 1px 2px 2px;
-    width: 150px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+    padding: 2px 10px 3px;
+    width: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 9px;
+    color: #8d8d8d;
     position: absolute;   
     line-height: inherit;
-    border: 2px solid #363636;
+    border: 1.5px solid #27536b;
+    border-radius: 15px;
 
 
   }
@@ -71,3 +81,5 @@
     padding: 10px;
     font-size: 12px;
   }
+
+  

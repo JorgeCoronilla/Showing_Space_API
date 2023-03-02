@@ -1,12 +1,11 @@
 export const planetOptions = [
-    { value: 'name', text: 'Planet name' },
-    { value: 'diameter', text: 'Diameter' },
-    { value: 'population', text: 'Population' },
-    { value: 'rotation_period', text: 'Rotation period' },
-    { value: 'orbital_period', text: 'Orbital Period' },
+    { value: 'englishName', text: 'Planet name' },
     { value: 'gravity', text: 'Gravity' },
-    { value: 'terrain', text: 'terrain' },
-    { value: 'climate', text: 'Climate' },
+    { value: 'equaRadius', text: 'Radius' },
+    { value: 'flattening', text: 'Flattening' },
+    { value: 'eccentricity', text: 'Eccentricity' },
+    { value: 'density', text: 'Density' },
+    { value: 'avgTemp', text: 'Average Temp' },
 ];
 
 

@@ -1,32 +1,32 @@
 import React, { useState } from 'react'
-import { SlMagnifier, SlTarget } from "react-icons/sl";
+import { SlMagnifier } from "react-icons/sl";
 import { SearchList } from './searchList';
 
-export const Search = ({planets2}) => {
-  const [searchValue, setSearchValue]=useState("")
-  const [filterdList, setFilteredList]=useState([])
+export const Search = ({ planets2 }) => {
+  const [filterdList, setFilteredList] = useState([])
+  const iconStyle = { fontSize: "8px", position: "relative", bottom: "14px", left: "9px" }
 
-  const iconStyle = { fontSize: "14px", position: "relative", bottom: "18px", left: "5px" }
-  
   const handleChange = (e) => {
-    setSearchValue(e.target.value.toLowerCase())
-    
-const result = planets2.filter(function (planet) { return planet.name.startsWith(searchValue) || planet.name.includes(searchValue)})
-    console.log(result)
+    const result = planets2.filter(function (planet) { return planet.englishName.toLowerCase().startsWith(e.target.value.toLowerCase()) || planet.englishName.toLowerCase().includes(e.target.value.toLowerCase()) })
     setFilteredList(result)
+  }
+
+  const resetSearch = (e) => {
+    e.target.value=""
+    setFilteredList("")
   }
 
 
   return (
     <div>
-    <div className='form-group fg--search'>
-      <input type="text" className="input" placeholder="search" onChange={handleChange} />
-        <button type="submit"><SlMagnifier style={iconStyle}/></button>
-    </div>
-    {filterdList.length>0 && 
-    <SearchList filterdList={filterdList}/>
-    }
-    
+      <div className='fg--search'>
+        <input type="text" className="input" placeholder="Search" onChange={handleChange} onBlur={resetSearch} />
+        <button type="submit"><SlMagnifier style={iconStyle} /></button>
+      </div>
+      {filterdList.length > 0 &&
+        <SearchList filterdList={filterdList} />
+      }
+
     </div>
   )
 }

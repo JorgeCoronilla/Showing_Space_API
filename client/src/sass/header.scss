@@ -2,7 +2,8 @@
 .header {
     display: flex;
     justify-content:space-between;
-    padding: 20px 30px;
+    padding: 20px 30px 0px;
+    
 }
 
 .headerIcons {
@@ -21,17 +22,28 @@ margin: 0 10px;
 .headerTitles {
 padding: 0;
 width: max-content;
+margin-bottom: 0;
+height: 35px;
+}
+
+.underLine{
+    position: relative;
+    top: 21px;
+    right: 2px;
+    width: 150px;
+    height: 10px;
+    background-color: #f9c280;
+    z-index: -1;
 }
 
 .headerTitles h1 {
     font-size: 20px;
- color:rgb(33, 33, 33);
-    font-weight: 600;
+    color: #27536b;
+ /*color:rgb(33, 33, 33);*/
+    font-weight: 400;
     margin-top: 10px;
+    padding: 0;
     font-family: 'Alfa Slab One', cursive;
-
-
-   
 }
 
 .headerTitles h3 {

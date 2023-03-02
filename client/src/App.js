@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Header } from "./components/header";
 import { Menu } from "./components/menu";
 import { CreateMainContext } from "./providers/createMainProvider";
 import { Planets } from "./components/planets/planets";
-import { StarShips } from "./components/starShips/starShips";
-import { Vehicles } from "./components/vehicles/vehicles";
-import People from "./components/people/people";
-import { fetchAllPlanetData } from "./helpers/getFromApi";
-import { sortBy } from './helpers/sortItems';
 import { Footer } from './components/footer';
+import { DwarfPlanets } from './components/dwarfPlanets/DwarfPlanets';
+import { Moons } from './components/moons/Moons';
+import { Comets } from './components/comets/Comets';
+import { Asteroids } from './components/asteroids/Asteroids';
 
 
 
@@ -27,9 +26,10 @@ function App() {
         <div className='contentGrid'>
           <div className="secondBody">
             {display === "planets" && <Planets />}
-            {display === "starShips" && <StarShips />}
-            {display === "vehicles" && <Vehicles />}
-            {display === "people" && <People />}
+            {display === "dwarf-planets" && <DwarfPlanets />}
+            {display === "moons" && <Moons />}
+            {display === "comets" && <Comets />}
+            {display === "asteroids" && <Asteroids />}
           </div>
         </div>
 

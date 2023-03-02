@@ -2,11 +2,17 @@
 
 .menu {
     width: 100%;
-    padding: 20px;
+    padding: 5px;
     background-color: #e8e8e8;
     margin: 0;
     height: 100%;
 
+}
+
+.menuList {
+    display: flex;
+    flex-direction: column;
+   
 }
 
 .menuList span {
@@ -14,8 +20,10 @@
 }
 
 .menuList img {
-    width: 120px;
+    width: 50%;
     margin-left: 25%;
+    margin-bottom: 20px;
+    margin-top: 35px;
 }
 
 .menuList h3 {
@@ -29,25 +37,36 @@
 }
 
 .menudesktop{
-margin-left: 10%;
+width:fit-content;
+margin: 0 auto;
 }
 
 .menuList p {
-    margin-bottom: 15px;
-    padding: 5px 15px;
-    border-radius: 10px;
-
+    margin-bottom: 0;
+    padding: 5px 15px 10px;
+    border-radius: 5px;
+    font-size: 10px;
 }
 
 .menuList p:hover {
-   background-color: #b2b2b2;
+   background-color: #dfdfdf;
+   border-bottom: #b0b0b0 solid 1px;
+   color:#727272;
 }
 
 .menumobile {
     visibility: visible;}
 
+.menuBtn {
+    border:#363636 solid 3px;
+    padding: 0;
+    width: 90%;
+    margin-top: 5px;
+
+}
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) and (min-width: 320px) {
+@media only screen and (max-width: 730px) and (min-width: 320px) {
     
 .menu {
     width: 100%;

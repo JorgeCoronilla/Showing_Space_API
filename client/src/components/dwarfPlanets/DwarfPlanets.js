@@ -1,44 +1,42 @@
 import React, { useEffect, useState } from 'react';
 import { Search } from '../search';
-import { PlanetsFilter } from '../planets/planetsFilter';
 import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 import { sortBy } from '../../helpers/sortItems';
-import { PlanetCard } from './planetCard';
+import { DwarfCard } from './DwarfCard';
+import { DwarfFilter } from './DwarfFilter';
 
+export const DwarfPlanets = () => {
 
-export const Planets = () => {
   const [sortCriteria, setSorCriteria] = useState('name');
-  const [planets2, setPlanets2] = useState([]);
+  const [dwarfPlanets, setDwarfPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [totalPlanets, setTotalPlanets] = useState(0);
+  const [totalDwarfPlanets, setTotalDwarfPlanets] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(0);
   const [refresh, setRefresh] = useState(true)
-
 
   useEffect(() => {
     setLoading(false)
   }, [refresh])
 
   useEffect(() => {
-    planets2.sort(sortBy(sortCriteria))
+    dwarfPlanets.sort(sortBy(sortCriteria))
     setRefresh(!refresh)
   }, [sortCriteria])
 
   useEffect(() => {
-    fetch(`https://api.le-systeme-solaire.net/rest/bodies/?exclude=isPlanet,%20dimension,%20alternativeName&filter[]=isPlanet,eq,true
-      `)
+    fetch(`https://api.le-systeme-solaire.net/rest/bodies/?filter[]=bodyType,eq,Dwarf%20Planet`)
       .then((response) => response.json())
       .then((response) => {
-        setPlanets2(response.bodies);
+        setDwarfPlanets(response.bodies);
         console.log(response.bodies);
-        setTotalPlanets(response.bodies.length)
+        setTotalDwarfPlanets(response.bodies.length)
         if (response.bodies.length < 10) { setRecordsPerPage(response.bodies.length) } else { setRecordsPerPage(10) }
         setLoading(false)
       })
 
     return () => {
-      planets2.sort(sortBy(sortCriteria))
+      dwarfPlanets.sort(sortBy(sortCriteria))
     }
   }, [loading])
 
@@ -57,36 +55,36 @@ export const Planets = () => {
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-  const currentRecords = planets2.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(planets2.length / recordsPerPage)
+  const currentRecords = dwarfPlanets.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(dwarfPlanets.length / recordsPerPage)
 
   return (
     <div className='cardsConatinerTitle'>
-      <h3>Planets</h3>
-      <div>
-        <div className='searchContainer'>
+    <h3>Dwarf Planets</h3>
+    <div>
+      <div className='searchContainer'>
 
-          <div>
-            <Search planets2={planets2} />
-          </div>
-
-          <div>
-            <PlanetsFilter planets2={planets2} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
-          </div>
-
+        <div>
+          <Search dwarfPlanets={dwarfPlanets} />
         </div>
 
-        <PlanetCard planets2={planets2} currentRecords={currentRecords} />
+        <div>
+          <DwarfFilter dwarfPlanets={dwarfPlanets} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
+        </div>
 
       </div>
 
-      {planets2.length > 1 &&
-        <div className='pageBrowser'>
-          <button onClick={previous}><HiArrowCircleLeft /></button>
-          <p>{currentPage} to {recordsPerPage} of {totalPlanets}</p>
-          <button onClick={next}><HiArrowCircleRight /></button>
-        </div>}
+      <DwarfCard dwarfPlanets={dwarfPlanets} currentRecords={currentRecords} />
 
     </div>
+
+    {dwarfPlanets.length > 1 &&
+      <div className='pageBrowser'>
+        <button onClick={previous}><HiArrowCircleLeft /></button>
+        <p>{currentPage} to {recordsPerPage} of {totalDwarfPlanets}</p>
+        <button onClick={next}><HiArrowCircleRight /></button>
+      </div>}
+
+  </div>
   )
 }

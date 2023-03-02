@@ -1,46 +1,47 @@
-import React, {useContext} from 'react'
-import { CreateMainContext } from '../../providers/createMainProvider'
+import React from 'react'
 import loadingGif from '../../media/loading.gif'
-import planetsImgs from '../../media'
+import { planetSource } from '../../media/planetsSources'
 
+export const PlanetCard = ({ planets2, currentRecords }) => {
 
-export const PlanetCard = ({planets2, currentRecords}) => {
+  const addDefaultImg = (e) => {
+    e.target.src = './fallbackImg.png'
+  }
 
-const addDefaultImg = (e) => {
-    e.target.src='./fallbackImg.png'
-}
-
-    //const {planets2} = useContext(CreateMainContext)
+  //const {planets2} = useContext(CreateMainContext)
   return (
     <div >
-        {planets2.length > 1 ?
-          <div className='cardContainer'>
-            {currentRecords.map((planet, index) => {
-                let population
-                let imgName=planet.name.toLowerCase().replace(/\s/g, "");
-                let imgPath = `./planets/${imgName}.png`
-                if (planet.population==="unknown") {
-                    population = "Unknown population"
-                } else if (planet.population<1000000 ){
-                    population = 'Population of ' + planet.population/1000 +'k'
-                } else {population = 'Population of ' + planet.population/1000000 +'M'} 
-                 
-                    return (
-                        <div className='card' key={planet.name}>
-                            <img src={imgPath} onError={addDefaultImg}/>
-                            <h6>{planet.name}</h6>
-                            <p>{planet.climate}, {planet.terrain}</p>
-                            <p>{population}</p>
-                        </div>            
-                      )
-            })}
-          </div>
-          :
-          <div className='loading'>
-            <img src={loadingGif} alt="Loading Data" />
-            <p>Loading data...</p>
-          </div>
-        }
+      {planets2.length > 1 ?
+        <div className='cardContainer'>
+          {currentRecords.map((planet, index) => {
+            let moonsN = 0, radious = Math.ceil(planet.equaRadius)
+            let imgPath = planetSource[planet.englishName]
+            if (planet.moons) { moonsN = planet.moons.length }
+
+            return (
+              <div className='card' key={planet.name}>
+                <img src={imgPath} onError={addDefaultImg} />
+                <h6>{planet.englishName}</h6>
+                <div className='cardInfo'>
+                  <div>
+                    <p>Moons: {moonsN}</p>
+                    <p>Gravity: {planet.gravity}</p>
+                  </div>
+                  <div>
+                    <p>Radious: {radious}Km</p>
+                    <p>Inclination: {planet.inclination}</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+        :
+        <div className='loading'>
+          <img src={loadingGif} alt="Loading Data" />
+          <p>Loading data...</p>
+        </div>
+      }
     </div>
   )
 }
