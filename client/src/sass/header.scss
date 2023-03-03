@@ -28,9 +28,9 @@ height: 35px;
 
 .underLine{
     position: relative;
-    top: 21px;
-    right: 2px;
-    width: 150px;
+    left: 27px;
+    bottom: 42px;
+    width: 250px;
     height: 10px;
     background-color: #f9c280;
     z-index: -1;
@@ -52,10 +52,14 @@ height: 35px;
     padding: 0;
 }
 
-@media only screen and (max-width: 600px) and (min-width: 320px) {
+@media only screen and (max-width: 600px) {
     
-.header {
-    position: fixed;
-    visibility: hidden;
-    
-}}
+.headerIcons {
+    margin-right: 0;
+    font-size: 20px;
+}
+.headerTitles h1 {
+    font-size: 23px;
+}
+
+}

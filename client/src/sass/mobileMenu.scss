@@ -1,7 +1,26 @@
-.mobileMenu {
-    background-color: #e8e8e8;
-    width: 100%;
+.dropDownMenu {
     position: absolute;
-    top:80px;
     left:0;
+    background-color: #e8e8e8;
+    padding: 10px;
+    width:100%;
+    z-index: 5;
+}
+
+.dropMenuContainer {
+    //border-top: solid rgb(172, 172, 172) 1px;
+    width: 70%;
+    margin: 0 auto 0;
+    padding-top: 10px;
+}
+
+.dropMenuContainer div {
+    width: fit-content;
+    margin: 0 auto 0;
+}
+.dropDownMenu p {
+    font-size: 20px;
+    padding: 20px 0;
+    border-top: solid rgb(172, 172, 172) 1px;
+
 }

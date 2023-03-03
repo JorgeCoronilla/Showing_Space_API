@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import { SlMagnifier } from "react-icons/sl";
 import { SearchList } from './searchList';
 
-export const Search = ({ planets2 }) => {
+export const Search = ({ items }) => {
   const [filterdList, setFilteredList] = useState([])
   const iconStyle = { fontSize: "8px", position: "relative", bottom: "14px", left: "9px" }
 
   const handleChange = (e) => {
-    const result = planets2.filter(function (planet) { return planet.englishName.toLowerCase().startsWith(e.target.value.toLowerCase()) || planet.englishName.toLowerCase().includes(e.target.value.toLowerCase()) })
+    const result = items.filter(function (planet) { return planet.englishName.toLowerCase().startsWith(e.target.value.toLowerCase()) || planet.englishName.toLowerCase().includes(e.target.value.toLowerCase()) })
     setFilteredList(result)
   }
 

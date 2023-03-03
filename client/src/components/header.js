@@ -7,7 +7,6 @@ export const Header = () => {
         <div className='header'>
             <div className='headerTitles'>
                 <h1>Solar System Bodies</h1>
-                <div className='underLine'></div>
             </div>
             <div className='headerIcons'>
                 <p><HiBell /></p>

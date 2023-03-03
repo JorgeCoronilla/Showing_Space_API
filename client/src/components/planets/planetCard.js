@@ -8,7 +8,6 @@ export const PlanetCard = ({ planets2, currentRecords }) => {
     e.target.src = './fallbackImg.png'
   }
 
-  //const {planets2} = useContext(CreateMainContext)
   return (
     <div >
       {planets2.length > 1 ?

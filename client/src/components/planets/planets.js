@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Search } from '../search';
-import { PlanetsFilter } from '../planets/planetsFilter';
+import { Filter } from '../filter';
 import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 import { sortBy } from '../../helpers/sortItems';
 import { PlanetCard } from './planetCard';
 
 
-export const Planets = () => {
+export const Planets = ({display}) => {
   const [sortCriteria, setSorCriteria] = useState('name');
   const [planets2, setPlanets2] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +14,7 @@ export const Planets = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(0);
   const [refresh, setRefresh] = useState(true)
-
+  const iconStyle = { fontSize: "16px", color: "#e0634b" }
 
   useEffect(() => {
     setLoading(false)
@@ -63,15 +63,16 @@ export const Planets = () => {
   return (
     <div className='cardsConatinerTitle'>
       <h3>Planets</h3>
+      <div className='underLine'></div>
       <div>
         <div className='searchContainer'>
 
           <div>
-            <Search planets2={planets2} />
+            <Search items={planets2} />
           </div>
 
           <div>
-            <PlanetsFilter planets2={planets2} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
+            <Filter display={display} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
           </div>
 
         </div>
@@ -81,10 +82,12 @@ export const Planets = () => {
       </div>
 
       {planets2.length > 1 &&
-        <div className='pageBrowser'>
+       <div className='pageBrowserContainer'>
+       <div className='pageBrowser'>
           <button onClick={previous}><HiArrowCircleLeft /></button>
           <p>{currentPage} to {recordsPerPage} of {totalPlanets}</p>
           <button onClick={next}><HiArrowCircleRight /></button>
+        </div>
         </div>}
 
     </div>

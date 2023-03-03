@@ -1,5 +1,5 @@
 .searchContainer{
-    margin: 0 30px;
+    margin: 0 30px 10px;
     display: flex;
     flex-direction: row;
 }
@@ -45,13 +45,10 @@
     top: 0;
     right: 0;
     padding: 18px 20px;
-    z-index: 2;
+   // z-index: 2;
 
   }
   
-  .fg--search input:focus + button .fa-search {
-    color: red;
-  }
 
   .filters {
     margin-left: 8px;
@@ -82,4 +79,50 @@
     font-size: 12px;
   }
 
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+
+.cardsConatinerTitle h3{
+    font-size: 35px;
+}
+
+.searchBox {
+  border-radius: 20px;
+  padding: 1px 10px 1px 20px;
+}
+
+.fg--search {
+    background: white;
+    position: relative;
+    width: 180px;
+    margin:  0 10px 0;
+  }
   
+  .fg--search input {
+   
+    font-size: 20px;
+
+  }
+  
+  .fg--search button {
+   display: none;
+   z-index:0;
+  }
+  
+
+  
+  .filters select{
+
+    font-size: 20px;
+  }
+
+  .searchList{
+    border: 2px rgb(186, 186, 186) solid;
+    position: absolute;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    font-size: 12px;
+  }
+}

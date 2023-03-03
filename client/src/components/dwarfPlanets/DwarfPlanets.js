@@ -3,9 +3,9 @@ import { Search } from '../search';
 import { HiArrowCircleLeft, HiArrowCircleRight } from "react-icons/hi";
 import { sortBy } from '../../helpers/sortItems';
 import { DwarfCard } from './DwarfCard';
-import { DwarfFilter } from './DwarfFilter';
+import { Filter } from '../filter';
 
-export const DwarfPlanets = () => {
+export const DwarfPlanets = ({ display }) => {
 
   const [sortCriteria, setSorCriteria] = useState('name');
   const [dwarfPlanets, setDwarfPlanets] = useState([]);
@@ -29,7 +29,6 @@ export const DwarfPlanets = () => {
       .then((response) => response.json())
       .then((response) => {
         setDwarfPlanets(response.bodies);
-        console.log(response.bodies);
         setTotalDwarfPlanets(response.bodies.length)
         if (response.bodies.length < 10) { setRecordsPerPage(response.bodies.length) } else { setRecordsPerPage(10) }
         setLoading(false)
@@ -60,31 +59,33 @@ export const DwarfPlanets = () => {
 
   return (
     <div className='cardsConatinerTitle'>
-    <h3>Dwarf Planets</h3>
-    <div>
-      <div className='searchContainer'>
+      <h3>Dwarf Planets</h3>
+      <div className='underLine'></div>
+      <div>
+        <div className='searchContainer'>
+          <div>
+            <Search items={dwarfPlanets} />
+          </div>
 
-        <div>
-          <Search dwarfPlanets={dwarfPlanets} />
+          <div>
+            <Filter display={display} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
+          </div>
+
         </div>
 
-        <div>
-          <DwarfFilter dwarfPlanets={dwarfPlanets} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
-        </div>
+        <DwarfCard dwarfPlanets={dwarfPlanets} currentRecords={currentRecords} />
 
       </div>
 
-      <DwarfCard dwarfPlanets={dwarfPlanets} currentRecords={currentRecords} />
+      {dwarfPlanets.length > 1 &&
+        <div className='pageBrowserContainer'>
+          <div className='pageBrowser'>
+            <button onClick={previous}><HiArrowCircleLeft /></button>
+            <p>{currentPage} to {recordsPerPage} of {totalDwarfPlanets}</p>
+            <button onClick={next}><HiArrowCircleRight /></button>
+          </div>
+        </div>}
 
     </div>
-
-    {dwarfPlanets.length > 1 &&
-      <div className='pageBrowser'>
-        <button onClick={previous}><HiArrowCircleLeft /></button>
-        <p>{currentPage} to {recordsPerPage} of {totalDwarfPlanets}</p>
-        <button onClick={next}><HiArrowCircleRight /></button>
-      </div>}
-
-  </div>
   )
 }
