@@ -81,7 +81,7 @@ export const DwarfPlanets = ({ display }) => {
         <div className='pageBrowserContainer'>
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>
-            <p>{currentPage} to {recordsPerPage} of {totalDwarfPlanets}</p>
+            <p>{currentPage} of {nPages}  | {totalDwarfPlanets} planets</p>
             <button onClick={next}><HiArrowCircleRight /></button>
           </div>
         </div>}

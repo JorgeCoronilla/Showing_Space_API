@@ -1,18 +1,62 @@
-.footer{
+.footer {
     position: fixed;
-    top: 92vh;
+    justify-content: space-between;
+    top: 90vh;
     width: 100%;
-    background-color: black;
-    color:white;
-    padding: 15px;
-    height: 45px;
+    background-color: rgb(33, 33, 33);
+    ;
+    color: white;
+    padding: 5px 15px 20px;
+    height: 55px;
+}
+
+.footer p {
+    text-align: center;
+    margin:  10px 0 0;
+    font-size: 8px;
+}
+
+.footerIcons {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 5px auto;
+}
+
+.footerIcons p {
+    margin: 0 5px;
+    font-size: 12px;
+
 }
 
 @media only screen and (max-width: 600px) {
-    .footer{
-        top: 94vh;
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        top: 92.5vh;
         height: 65px;
-        font-size: 17px;
+        font-size: 14px;
+        padding: 20px 15px 20px;
+
+    }
+
+
+    .footer p {
         text-align: center;
+        margin: 4px 0 0 8px;
+        font-size: 14px;
+    }
+
+    .footerIcons {
+        width: fit-content;
+        margin: 0;
+        z-index: 5;
+    }
+
+    .footerIcons p {
+        margin: 0 10px;
+        font-size: 20px;
+
     }
 }

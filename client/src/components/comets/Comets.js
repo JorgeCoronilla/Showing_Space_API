@@ -85,7 +85,7 @@ export const Comets = ({ display }) => {
 
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>
-            <p>{currentPage} to {recordsPerPage} of {totalComets}</p>
+            <p>{currentPage} of {nPages} | {totalComets} comets</p>
             <button onClick={next}><HiArrowCircleRight /></button>
           </div>
 

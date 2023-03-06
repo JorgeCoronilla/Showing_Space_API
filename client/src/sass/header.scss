@@ -8,8 +8,8 @@
 
 .headerIcons {
 text-align: right;
-size:70px;
-color:rgb(33, 33, 33);
+font-size:30px;
+color: #e0634b;
 padding-top: 12px;
 margin-right: 50px;
 }
@@ -17,6 +17,7 @@ margin-right: 50px;
 .headerIcons p {
     display: inline;
 margin: 0 10px;
+
 }
 
 .headerTitles {
@@ -56,10 +57,16 @@ height: 35px;
     
 .headerIcons {
     margin-right: 0;
-    font-size: 20px;
+    font-size: 25px;
 }
+
+.headerIcons p {
+    display: inline;
+margin: 0 5px;
+}
+
 .headerTitles h1 {
-    font-size: 23px;
+    font-size: 20px;
 }
 
 }

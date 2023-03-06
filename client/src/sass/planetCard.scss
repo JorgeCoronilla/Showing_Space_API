@@ -2,12 +2,13 @@
 
 
 .cardContainer {
+    position: relative;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding:  5px 15px 15px;
     overflow-y: scroll;
-    max-height: 62vh;
+    max-height: 65vh;
 }
 
 .card {
@@ -17,8 +18,6 @@
     margin: 10px;
     border-radius: 3px;
     border: solid rgb(208, 208, 208) 1px;
-    //box-shadow: rgba(45, 75, 77, 0.3) 0px 7px 29px 0px;
-    //box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
@@ -48,7 +47,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 4px;
+    padding-top: 1px;
 }
 
 .card h6 {
@@ -95,7 +94,7 @@ margin-top: 0;
     background-color: transparent;
     position: fixed;
     left: 40vw;
-    bottom: 40px;
+    bottom: 50px;
     z-index: 3;
 }
 .loading {
@@ -119,22 +118,45 @@ margin-top: 0;
     margin: 0;
 }
 
+.spacer{
+    height: 70px;
+    background-color: transparent;
+    z-index: -2;
+}
+
+.infoIcon{ 
+    position:relative;
+    bottom: 75px;
+    left:150px;
+    color: hsl(0, 0%, 100%,0.4);
+}
+
+.titleAndInfoCard{
+    position: relative;
+    bottom: 16px;
+}
+
+.pSmall{
+padding-bottom: 3px;
+}
+
+
 @media only screen and (max-width: 600px) {
     
 .cardContainer {
     padding:  5px 15px 15px;
-    max-height: 65vh;
+    max-height: 62vh;
 }
 
 .card {
     width: 390px;
-    height: 265px;
+    height: 245px;
     margin: 10px;
 }
 
 
 .card img {
-    height: 178px;
+    height: 168px;
 }
 
 .card p, .card h6{
@@ -142,28 +164,39 @@ margin-top: 0;
 } 
 
 .card h6 {
-font-size: 24px;
+font-size: 20px;
 
 }
 
 .cardInfo p, .cardInfoComets {
-font-size: 16px;
+font-size: 14px;
 }
 
 
 .pageBrowser button{
-    font-size: 28px;
+    font-size: 20px;
+    padding-top: 4px;
 }
 
-.pageBrowser p {    
-    font-size: 22px;
+.pageBrowser p {
+    margin-top: 7px;    
+    font-size: 14px;
 }
 
 .pageBrowserContainer{
-    bottom: 60px;
-    left:17%;
+    bottom: 70px;
+    left:15%;
 }
 
 
+.infoIcon{
+   font-size: 30px;
+   bottom: 160px;
+    left:288px;
+}
+
+.titleAndInfoCard{
+    bottom: 35px;
+}
 
 }

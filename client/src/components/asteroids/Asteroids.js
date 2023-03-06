@@ -83,7 +83,7 @@ export const Asteroids = ({ display }) => {
         <div className='pageBrowserContainer'>
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>
-            <p>{currentPage} to {recordsPerPage} of {totalAsteroids}</p>
+            <p>{currentPage} of {nPages} | {totalAsteroids} asteroids</p>
             <button onClick={next}><HiArrowCircleRight /></button>
           </div>
         </div>}

@@ -78,7 +78,7 @@ export const Moons = ({ display }) => {
         <div className='pageBrowserContainer'>
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>
-            <p>{currentPage} to {recordsPerPage} of {totalMoons}</p>
+            <p>{currentPage} of {nPages} | {totalMoons} moons</p>
             <button onClick={next}><HiArrowCircleRight /></button>
           </div>
         </div>

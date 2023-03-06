@@ -17,6 +17,7 @@ export const MobileMenu = ({ setDisplay, setDisplayMobile, displayMobile }) => {
           }}><span><IoPlanetOutline style={iconStyle} /></span>Planets</p>
           <p onClick={() => {
             setDisplay("dwarf-planets");
+            setDisplayMobile(!displayMobile)
           }}><span><IoIosPlanet style={iconStyle} /></span>Dwarf Planets</p>
           <p onClick={() => {
             setDisplay("moons");
