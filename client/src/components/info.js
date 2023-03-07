@@ -90,7 +90,7 @@ export const Info = ({ setShowInfo }) => {
                                         </li>
                                         <li>Use of <strong>Grid y Flexbox</strong>.</li>
                                         <li><strong>Responsive</strong> for desktop and mobile.</li>
-                                        <li> Estilos en <strong>SCSS</strong> puro sin ayuda de librerías externas.</li>
+                                        <li> Styles with <strong>SCSS</strong> without externL libraries.</li>
                                     </ul>
                                 </li>
                                 <li><span>Menu</span>: The info is shown in the categories displayed in the menu (planets, dwarf planets, moons, comets and asteroids).</li>
