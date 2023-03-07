@@ -43,7 +43,6 @@ export const Moons = ({ display }) => {
   const previous = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1)
-      // setRecordsPerPage(recordsPerPage => recordsPerPage + 10)
     }
   }
 
@@ -65,7 +64,7 @@ export const Moons = ({ display }) => {
       <div>
         <div className='searchContainer'>
           <div>
-            <Search items={moons} />
+            <Search items={moons} setNewItems={setMoons} />
           </div>
           <div>
             <Filter display={display} setSorCriteria={setSorCriteria} sortCriteria={sortCriteria} />
@@ -74,7 +73,7 @@ export const Moons = ({ display }) => {
         <MoonCard moons={moons} currentRecords={currentRecords} />
       </div>
 
-      {moons.length > 1 &&
+      {moons.length > 0 &&
         <div className='pageBrowserContainer'>
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>

@@ -42,7 +42,6 @@ export const DwarfPlanets = ({ display }) => {
   const previous = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1)
-      setRecordsPerPage(recordsPerPage => recordsPerPage + 10)
     }
   }
 
@@ -64,7 +63,7 @@ export const DwarfPlanets = ({ display }) => {
       <div>
         <div className='searchContainer'>
           <div>
-            <Search items={dwarfPlanets} />
+            <Search items={dwarfPlanets} setNewItems={setDwarfPlanets} />
           </div>
 
           <div>
@@ -77,7 +76,7 @@ export const DwarfPlanets = ({ display }) => {
 
       </div>
 
-      {dwarfPlanets.length > 1 &&
+      {dwarfPlanets.length > 0 &&
         <div className='pageBrowserContainer'>
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>

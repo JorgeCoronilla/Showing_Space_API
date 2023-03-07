@@ -16,7 +16,7 @@ export const CometsCard = ({ comets, currentRecords }) => {
     }
     return (
         <div >
-            {comets.length > 1 ?
+            {comets.length > 0 ?
                 <div className='cardContainer'>
                     {currentRecords.map((comet, index) => {
                         let imgPath, orbit;

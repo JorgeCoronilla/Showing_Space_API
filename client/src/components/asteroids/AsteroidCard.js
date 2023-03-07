@@ -17,7 +17,7 @@ export const AsteroidCard = ({ asteroids, currentRecords }) => {
 
   return (
     <div >
-      {asteroids.length > 1 ?
+      {asteroids.length > 0 ?
         <div className='cardContainer'>
           {currentRecords.map((asteroid, index) => {
             let imgPath = asteroidSources[asteroid.id]

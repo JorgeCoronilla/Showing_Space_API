@@ -8,13 +8,18 @@ import { Moons } from './components/moons/Moons';
 import { Comets } from './components/comets/Comets';
 import { Asteroids } from './components/asteroids/Asteroids';
 import { sizes } from './sass/mediaSizes';
+import { Info } from './components/info';
 
 
 function App() {
   const [display, setDisplay] = useState("planets");
-
+  const [showInfo, setShowInfo] = useState(true);
   return (
     <div className="mainContainer">
+      {showInfo &&
+       <Info setShowInfo={setShowInfo} />
+      }
+     
       <div className='menuGrid'>
         <Menu setDisplay={setDisplay} />
       </div>

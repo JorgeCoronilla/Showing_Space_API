@@ -18,7 +18,7 @@ export const PlanetCard = ({ planets2, currentRecords }) => {
 
   return (
     <div >
-      {planets2.length > 1 ?
+      {planets2.length > 0 ?
         <div className='cardContainer'>
           {currentRecords.map((planet, index) => {
             let moonsN = 0, radious = Math.ceil(planet.equaRadius)

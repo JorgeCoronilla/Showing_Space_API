@@ -44,7 +44,6 @@ export const Comets = ({ display }) => {
   const previous = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1)
-      // setRecordsPerPage(recordsPerPage => recordsPerPage + 10)
     }
   }
 
@@ -67,7 +66,7 @@ export const Comets = ({ display }) => {
         <div className='searchContainer'>
 
           <div>
-            <Search items={comets} />
+            <Search items={comets} setNewItems={setComets} />
           </div>
 
           <div>
@@ -80,7 +79,7 @@ export const Comets = ({ display }) => {
 
       </div>
 
-      {comets.length > 1 &&
+      {comets.length > 0 &&
         <div className='pageBrowserContainer'>
 
           <div className='pageBrowser'>

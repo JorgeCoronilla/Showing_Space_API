@@ -16,7 +16,7 @@ export const DwarfCard = ({ dwarfPlanets, currentRecords }) => {
   }
   return (
     <div >
-      {dwarfPlanets.length > 1 ?
+      {dwarfPlanets.length > 0 ?
         <div className='cardContainer'>
           {currentRecords.map((planet, index) => {
             let moonsN = 0, radious = Math.ceil(planet.equaRadius)

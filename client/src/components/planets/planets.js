@@ -14,7 +14,6 @@ export const Planets = ({display}) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [recordsPerPage, setRecordsPerPage] = useState(0);
   const [refresh, setRefresh] = useState(true)
-  const iconStyle = { fontSize: "16px", color: "#e0634b" }
 
   useEffect(() => {
     setLoading(false)
@@ -23,7 +22,7 @@ export const Planets = ({display}) => {
   useEffect(() => {
     planets2.sort(sortBy(sortCriteria))
     setRefresh(!refresh)
-  }, [sortCriteria])
+  }, [sortCriteria, planets2])
 
   useEffect(() => {
     fetch(`https://api.le-systeme-solaire.net/rest/bodies/?exclude=isPlanet,%20dimension,%20alternativeName&filter[]=isPlanet,eq,true
@@ -45,7 +44,6 @@ export const Planets = ({display}) => {
   const previous = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1)
-      setRecordsPerPage(recordsPerPage => recordsPerPage + 10)
     }
   }
 
@@ -68,7 +66,7 @@ export const Planets = ({display}) => {
         <div className='searchContainer'>
 
           <div>
-            <Search items={planets2} />
+            <Search items={planets2} setNewItems={setPlanets2} />
           </div>
 
           <div>
@@ -81,7 +79,7 @@ export const Planets = ({display}) => {
 
       </div>
 
-      {planets2.length > 1 &&
+      {planets2.length >0 &&
        <div className='pageBrowserContainer'>
        <div className='pageBrowser'>
           <button onClick={previous}><HiArrowCircleLeft /></button>

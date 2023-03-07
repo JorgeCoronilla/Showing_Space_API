@@ -1,27 +1,48 @@
-import React, { useState } from 'react'
-import { SlMagnifier } from "react-icons/sl";
+import React, { useState, useEffect } from 'react'
 import { SearchList } from './searchList';
 
-export const Search = ({ items }) => {
+export const Search = ({ items, setNewItems }) => {
   const [filterdList, setFilteredList] = useState([])
-  const iconStyle = { fontSize: "8px", position: "relative", bottom: "14px", left: "9px" }
+  const [backUpList, setBackupList] = useState([])
 
+  useEffect(() => {
+    if (backUpList.length<items.length) {
+      setBackupList(items)
+    }
+
+  }, [filterdList])
+  
   const handleChange = (e) => {
+
+    if (items.length<2){setNewItems(backUpList)}
     const result = items.filter(function (planet) { return planet.englishName.toLowerCase().startsWith(e.target.value.toLowerCase()) || planet.englishName.toLowerCase().includes(e.target.value.toLowerCase()) })
-    setFilteredList(result)
+    if (result.length !== 0) { setFilteredList(result) }
+    else {
+      setFilteredList([ { "englishName": "No results", "id": "No results"} ])
+    }
+    console.log("backup", backUpList)
   }
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      if (filterdList.length===1 && filterdList[0].id==="No results") { 
+       setNewItems(backUpList)
+       } else {
+        setNewItems(filterdList)
+       
+      }
+    }
+  };
 
   const resetSearch = (e) => {
-    e.target.value=""
+    e.target.value = ""
     setFilteredList("")
   }
-
 
   return (
     <div>
       <div className='fg--search'>
-        <input type="text" className="input" placeholder="Search" onChange={handleChange} onBlur={resetSearch} />
-        <button type="submit"><SlMagnifier style={iconStyle} /></button>
+        <input type="text" className="input" placeholder="Search" onChange={handleChange} onBlur={resetSearch} onKeyDown={handleKeyDown}/>
       </div>
       {filterdList.length > 0 &&
         <SearchList filterdList={filterdList} />

@@ -44,7 +44,6 @@ export const Asteroids = ({ display }) => {
   const previous = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1)
-      setRecordsPerPage(recordsPerPage => recordsPerPage + 10)
     }
   }
 
@@ -66,7 +65,7 @@ export const Asteroids = ({ display }) => {
       <div>
         <div className='searchContainer'>
           <div>
-            <Search items={asteroids} />
+            <Search items={asteroids} setNewItems={setAsteroids} />
           </div>
 
           <div>
@@ -79,7 +78,7 @@ export const Asteroids = ({ display }) => {
 
       </div>
 
-      {asteroids.length > 1 &&
+      {asteroids.length > 0 &&
         <div className='pageBrowserContainer'>
           <div className='pageBrowser'>
             <button onClick={previous}><HiArrowCircleLeft /></button>
