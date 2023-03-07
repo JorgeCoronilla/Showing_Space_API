@@ -66,7 +66,7 @@ export const Info = ({ setShowInfo }) => {
                                 <li><span>Menu</span>: Se muestran resultados por separado de planetas, planetas enanos, lunas, cometas y asteroides</li>
                                 <li><span>Paginación de resultados.</span></li>
                                 <li><span>Busqueda por nombre</span> (usar 'enter' para mostrar búsqueda).</li>
-                                <li><span>Filtros de ordenación</span> para ostrar resultados. Dependen del tipo de elemento a buscar.</li>
+                                <li><span>Filtros de ordenación</span> para mostrar resultados. Dependen del tipo de elemento a buscar.</li>
                                 <li><span>Ficha con información en detalle</span> al pulsar el icono de la imagen</li>
                                 <li><span>Representación gráfica</span> de resultados en la ficha con gráficas de barras sin ayuda de librerías externas.</li>
                             </ul>
@@ -96,7 +96,7 @@ export const Info = ({ setShowInfo }) => {
                                 <li><span>Menu</span>: The info is shown in the categories displayed in the menu (planets, dwarf planets, moons, comets and asteroids).</li>
                                 <li><span>Results are paginated.</span></li>
                                 <li><span>Search input by name</span> (use 'enter' to show your results).</li>
-                                <li><span>Filters to sort the data</span>. Filters change dependong on the category.</li>
+                                <li><span>Filters to sort the data</span>. Filters change depending on the category.</li>
                                 <li><span>Individual window for all data in detail for each body</span> when you click on the icon of the picture.</li>
                                 <li><span>Bar charts</span> to show data. Created without external libraries. Just vanilla React and SCSS</li>
                             </ul>
