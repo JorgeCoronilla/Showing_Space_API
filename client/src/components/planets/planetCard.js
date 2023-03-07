@@ -46,6 +46,8 @@ export const PlanetCard = ({ planets2, currentRecords }) => {
               </div>
             )
           })}
+                <div className='spacer'></div>
+
         </div>
         :
         <div className='loading'>

@@ -10,11 +10,11 @@
 
 .bigCard {
     background-color: white;
-    width: 50%;
+    width: 40%;
     margin: 50px auto;
     border-radius: 5px;
     border: 2px solid #478ba0;
-    padding: 20px;
+    padding: 30px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
 }
@@ -38,7 +38,7 @@
 
 .bigCardContainer img {
     width:100%;
-    height: 150px;
+    height: 300px;
     object-fit: cover;
     margin: 0 auto 0px;
     border-radius: 2px;
@@ -46,7 +46,7 @@
 
 .closeIcon {
     color: #e0634b;
-    font-size: 25px;
+    font-size: 35px;
     margin-top: 5px;
 }
 
@@ -65,17 +65,18 @@
 .infoKey{
     width:15%;
     margin-right: 5px;
-    font-size: 6px;
+    font-size: 14px;
 }
 .graphicBar{
     width:66%;
     border: 1.5px solid #f9c280;
     border-radius: 2px;
-    height: 8px;
+    height: 18px;
+    margin-top: 3px;
 }
 .infoValue{
     width:19%;
-    font-size: 6px;
+    font-size: 14px;
     margin-left: 5px;
 }
 
@@ -84,6 +85,8 @@
     .bigCard {
         width: 90%;
         margin: 20px auto;    
+        padding: 20px;
+
     }
 
     .bigCardContainer img {

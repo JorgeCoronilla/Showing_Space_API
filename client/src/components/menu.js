@@ -8,7 +8,7 @@ import { MobileMenu } from './mobileMenu';
 
 export const Menu = ({ setDisplay }) => {
   const [displayMobile, setDisplayMobile] = useState(false)
-  const iconStyle = { fontSize: "13px", position: "relative", top: "3px" }
+  const iconStyle = { fontSize: "20px", position: "relative", top: "3px" }
   const BurgerIconStyle = {fontSize: "35px", margin: "2px 35px 0 0"}
 
   return (

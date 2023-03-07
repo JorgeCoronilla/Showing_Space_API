@@ -1,19 +1,18 @@
 .footer {
     position: fixed;
     justify-content: space-between;
-    top: 90vh;
+    top: 92vh;
     width: 100%;
     background-color: rgb(33, 33, 33);
-    ;
     color: white;
     padding: 5px 15px 20px;
-    height: 55px;
+    height: 85px;
 }
 
 .footer p {
     text-align: center;
     margin:  10px 0 0;
-    font-size: 8px;
+    font-size: 16px;
 }
 
 .footerIcons {
@@ -25,7 +24,7 @@
 
 .footerIcons p {
     margin: 0 5px;
-    font-size: 12px;
+    font-size: 20px;
 
 }
 

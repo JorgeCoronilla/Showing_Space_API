@@ -3,7 +3,7 @@ import { planetOptions, dwarfOptions, moonOptions } from '../helpers/filterOptio
 import { AiOutlineControl } from "react-icons/ai";
 
 export const Filter = ({ setSorCriteria, display }) => {
-  const iconStyle2 = { fontSize: "16px", position: "relative", top: "1px", color: "#27536b" }
+  const iconStyle2 = { fontSize: "22px", position: "relative", top: "1px", color: "#27536b" }
   let options
 
   switch (display) {

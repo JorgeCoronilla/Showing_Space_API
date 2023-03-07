@@ -9,11 +9,12 @@
     padding:  5px 15px 15px;
     overflow-y: scroll;
     max-height: 65vh;
+    margin-right: 8%;
 }
 
 .card {
-    width: 180px;
-    height: 120px;
+    width: 350px;
+    height: 240px;
     border: 3px solid #ffffff;
     margin: 10px;
     border-radius: 3px;
@@ -29,7 +30,7 @@
 
 .card img {
     width:100%;
-    height: 78px;
+    height: 165px;
     object-fit: cover;
     margin: 0 auto 0px;
     border-top-left-radius: 2px;
@@ -40,25 +41,25 @@
     border: solid rgb(170, 170, 170) 1px;
 }
 .card p, .card h6{
-    margin: 0 10px;
+    margin: 0 20px;
 } 
 
 .cardInfo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding-top: 1px;
+    padding-top: 2px;
 }
 
 .card h6 {
-font-size: 10px;
+font-size: 20px;
 font-family: 'Alfa Slab One', cursive;
 font-weight: 100;
 
 }
 
 .cardInfo p, .cardInfoComets {
-font-size: 7px;
+font-size: 12px;
 margin-top: 0;
 
 }
@@ -79,14 +80,14 @@ margin-top: 0;
 .pageBrowser button{
     background-color: transparent;
     border: none;
-    margin:3px 25px 0 ;
+    margin:7px 25px 0 ;
     color: #e0634b;
-    font-size: 12px;
+    font-size: 22px;
 }
 
 .pageBrowser p {    
-    font-size: 10px;
-    margin-top: 3px;
+    font-size: 18px;
+    margin-top: 7px;
     font-weight: 600;
 }
 
@@ -94,7 +95,7 @@ margin-top: 0;
     background-color: transparent;
     position: fixed;
     left: 40vw;
-    bottom: 50px;
+    bottom: 70px;
     z-index: 3;
 }
 .loading {
@@ -119,21 +120,22 @@ margin-top: 0;
 }
 
 .spacer{
-    height: 70px;
+    height: 150px;
     background-color: transparent;
     z-index: -2;
 }
 
 .infoIcon{ 
     position:relative;
-    bottom: 75px;
-    left:150px;
-    color: hsl(0, 0%, 100%,0.4);
+    bottom: 155px;
+    left:290px;
+    font-size: 24px;
+    color: hsla(0, 0%, 100%, 0.473);
 }
 
 .titleAndInfoCard{
     position: relative;
-    bottom: 16px;
+    bottom: 26px;
 }
 
 .pSmall{
@@ -146,6 +148,8 @@ padding-bottom: 3px;
 .cardContainer {
     padding:  5px 15px 15px;
     max-height: 62vh;
+    margin-right: 0;
+
 }
 
 .card {
