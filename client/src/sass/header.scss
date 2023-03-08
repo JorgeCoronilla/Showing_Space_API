@@ -57,6 +57,8 @@ height: 35px;
 .headerIcons {
     margin-right: 0;
     font-size: 25px;
+    padding-top: 5px;
+
 }
 
 .headerIcons p {
@@ -66,6 +68,18 @@ margin: 0 5px;
 
 .headerTitles h1 {
     font-size: 20px;
+    margin-top: 10px;
+}
+
+
+.underLine{
+    position: relative;
+    left: 27px;
+    bottom: 19px;
+    width: 250px;
+    height: 12px;
+    background-color: #f9c280;
+    z-index: -1;
 }
 
 }
