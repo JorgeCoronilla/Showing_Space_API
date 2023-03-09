@@ -30,7 +30,6 @@ export const Comets = ({ display }) => {
       .then((response) => response.json())
       .then((response) => {
         setComets(response.bodies);
-        console.log(response.bodies);
         setTotalComets(response.bodies.length)
         if (response.bodies.length < 10) { setRecordsPerPage(response.bodies.length) } else { setRecordsPerPage(10) }
         setLoading(false)

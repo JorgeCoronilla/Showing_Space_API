@@ -30,7 +30,6 @@ export const Planets = ({display}) => {
       .then((response) => response.json())
       .then((response) => {
         setPlanets2(response.bodies);
-        console.log(response.bodies);
         setTotalPlanets(response.bodies.length)
         if (response.bodies.length < 10) { setRecordsPerPage(response.bodies.length) } else { setRecordsPerPage(10) }
         setLoading(false)

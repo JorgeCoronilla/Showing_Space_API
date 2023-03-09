@@ -73,6 +73,9 @@ margin: 0 auto;
 .menu {
     min-height: 50px;
     width: 100%;
+    position: fixed;
+    z-index: 9;
+   
 }
 
 .menudesktop {
@@ -84,10 +87,12 @@ margin: 0 auto;
 }
 
 .menumobile {
+    position: fixed;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width:100%;
+    z-index: 9;
 }
 .menumobile img {
   width: 35px;

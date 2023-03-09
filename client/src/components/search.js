@@ -20,7 +20,6 @@ export const Search = ({ items, setNewItems }) => {
     else {
       setFilteredList([ { "englishName": "No results", "id": "No results"} ])
     }
-    console.log("backup", backUpList)
   }
 
   const handleKeyDown = (event) => {

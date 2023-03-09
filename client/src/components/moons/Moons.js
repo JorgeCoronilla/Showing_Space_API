@@ -29,7 +29,6 @@ export const Moons = ({ display }) => {
       .then((response) => response.json())
       .then((response) => {
         setMoons(response.bodies);
-        console.log(response.bodies);
         setTotalMoons(response.bodies.length)
         if (response.bodies.length < 10) { setRecordsPerPage(response.bodies.length) } else { setRecordsPerPage(10) }
         setLoading(false)

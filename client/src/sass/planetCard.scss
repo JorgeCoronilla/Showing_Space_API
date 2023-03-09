@@ -147,20 +147,21 @@ padding-bottom: 3px;
     
 .cardContainer {
     padding:  5px 15px 15px;
-    max-height: 58vh;
+    //max-height: 58vh;
+    max-height: fit-content;
     margin-right: 0;
 
 }
 
 .card {
     width: 390px;
-    height: 245px;
+    height: 225px;
     margin: 10px;
 }
 
 
 .card img {
-    height: 168px;
+    height: 138px;
 }
 
 .card p, .card h6{
@@ -197,5 +198,10 @@ font-size: 14px;
    font-size: 30px;
    bottom: 160px;
     left:288px;
+}
+
+.titleAndInfoCard{
+    position: relative;
+    bottom: 37px;
 }
 }
