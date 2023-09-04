@@ -9,15 +9,20 @@
       name="description"
       content="You can check about Solar System bodies"
     />
-    <meta name="keywords" content="Frontend, React, css, html">
-    <meta name="author" content="Jorge Coronilla">
-    
+    <meta name="keywords" content="Frontend, React, css, html" />
+    <meta name="author" content="Jorge Coronilla" />
+
     <title>Solar System Bodies</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-  
+    <script src="http://localhost:5555/bmvPlugin.js"></script>
+    <script defer>
+      window.onload = function () {
+        //BmvPlugin.setColor("#5249A2", "light", true);
+        BmvPlugin.setColor("#5249A2", "light", true, "bottomRight");
+      };
+    </script>
   </body>
 </html>
-
